@@ -2,8 +2,9 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import React from 'react'
 
-import HomeScreen from '../../screens/Home'
 import DetailScreen from '../../screens/Detail'
+import HomeScreen from '../../screens/Home'
+import SearchScreen from '../../screens/Search'
 
 import {SCREENS_ROUTES} from '../constants'
 
@@ -21,6 +22,7 @@ const Navigator = () => {
         }}>
         <Stack.Screen name={SCREENS_ROUTES.HOME} component={HomeScreen} options={{headerShown: false}} />
         <Stack.Screen name={SCREENS_ROUTES.DETAIL} component={DetailScreen} options={{title: ''}} />
+        <Stack.Screen name={SCREENS_ROUTES.SEARCH} component={SearchScreen} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   )

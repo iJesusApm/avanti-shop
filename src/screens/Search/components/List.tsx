@@ -1,11 +1,14 @@
 import React, {useEffect, useState} from 'react'
-import {FlatList, StyleSheet, Text, View} from 'react-native'
-import ProductItem from './ProductItem'
+import {FlatList, StyleSheet, View} from 'react-native'
 import {Product} from '../../../types/product'
 import {getProducts} from '../../../services/products'
+import {COLORS} from '../../../styles/colors'
+import ProductItem from './Product'
+import SearchInput from './SearchInput'
 
 const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([])
+  const [searchValue, setSearchValue] = useState('')
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -20,17 +23,25 @@ const ProductList = () => {
     fetchProducts()
   }, [])
 
+  const filteredProducts = products.filter(product => product.title.toLowerCase().includes(searchValue.toLowerCase()))
+
   const renderProductItem = ({item}: {item: Product}) => <ProductItem product={item} />
+
+  const renderSeparator = () => <View style={styles.separator} />
+
+  const handleSearchChange = (text: string) => {
+    setSearchValue(text)
+  }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Products</Text>
+      <SearchInput value={searchValue} onChangeText={handleSearchChange} />
       <FlatList
-        data={products}
+        data={filteredProducts}
         contentContainerStyle={styles.list}
         keyExtractor={item => item.id}
         renderItem={renderProductItem}
-        numColumns={2}
+        ItemSeparatorComponent={renderSeparator}
         showsVerticalScrollIndicator={false}
       />
     </View>
@@ -40,16 +51,14 @@ const ProductList = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginVertical: 16,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 8,
   },
   list: {
     flexGrow: 1,
+    marginHorizontal: 16,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: COLORS.LIGHTGRAY,
   },
 })
 

@@ -1,20 +1,19 @@
 import React from 'react'
 import {StyleSheet, TouchableOpacity, View} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
-import {COLORS} from '../styles/colors'
 import {useNavigation} from '@react-navigation/native'
-import {SCREENS_ROUTES} from '../navigation/constants'
+import {COLORS} from '../../../styles/colors'
 
-const Footer = () => {
+const CloseScreenButton = () => {
   const navigation = useNavigation()
   const handlePress = () => {
-    navigation.navigate(SCREENS_ROUTES.SEARCH)
+    navigation.goBack()
   }
 
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={handlePress}>
-        <Ionicons name="search" size={32} color={COLORS.WHITE} />
+        <Ionicons name="close" size={32} color={COLORS.WHITE} />
       </TouchableOpacity>
     </View>
   )
@@ -31,10 +30,10 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   button: {
-    backgroundColor: COLORS.BLACK + 99,
+    backgroundColor: COLORS.RED + 99,
     borderRadius: 30,
     padding: 12,
   },
 })
 
-export default Footer
+export default CloseScreenButton
