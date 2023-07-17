@@ -4,9 +4,14 @@ import {COLORS} from '../styles/colors'
 
 const Header = () => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="header-container">
       <StatusBar barStyle="light-content" backgroundColor={COLORS.BLACK} />
-      <Image source={require('../assets/resources/avanti.png')} style={styles.logo} resizeMode="contain" />
+      <Image
+        source={require('../assets/resources/avanti.png')}
+        style={styles.logo}
+        resizeMode="contain"
+        testID="header-logo"
+      />
     </View>
   )
 }
