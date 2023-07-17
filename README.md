@@ -9,6 +9,12 @@
 
 ## Screens Previews
 
+<table style="border: 0">
+  <tr>
+    <td align="center"><img src="files/review.gif" /></td>
+  </tr>
+</table>
+
 ## Getting Started
 
 To get a local copy of this project up and running, follow the steps below.
@@ -46,4 +52,6 @@ From src:
 - components/: reusable components used across different screens.
 - navigation/: the app's navigation components and configuration.
 - screens/: screen components that render the UI and handle user interaction.
+- services/: here are the files related to communication with the API.
+- styles/: contains files for the global styles of your application.
 - App.tsx: the main entry point of the app.
