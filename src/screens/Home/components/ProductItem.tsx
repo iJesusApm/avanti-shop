@@ -2,14 +2,17 @@ import React from 'react'
 import {StyleSheet, Image, Text, TouchableOpacity, View} from 'react-native'
 import {Product} from '../../../types/product'
 import {COLORS} from '../../../styles/colors'
+import {useNavigation} from '@react-navigation/native'
+import {SCREENS_ROUTES} from '../../../navigation/constants'
 
 type ProductItemProps = {
   product: Product
 }
 
 const ProductItem = ({product}: ProductItemProps) => {
+  const navigation = useNavigation()
   const handlePress = () => {
-    console.log('press')
+    navigation.navigate(SCREENS_ROUTES.DETAIL, {product})
   }
 
   return (

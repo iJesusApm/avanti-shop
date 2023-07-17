@@ -27,3 +27,7 @@ export type GetProductResponse = {
     }
   }
 }
+
+export type DetailProductParamList = {
+  product: Product
+}

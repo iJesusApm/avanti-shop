@@ -3,14 +3,20 @@ import {TouchableOpacity, Image, Text, StyleSheet, View} from 'react-native'
 import {Product} from '../../../types/product'
 import {COLORS} from '../../../styles/colors'
 import {Ionicons} from '@expo/vector-icons'
+import {useNavigation} from '@react-navigation/native'
+import {SCREENS_ROUTES} from '../../../navigation/constants'
 
 type ProductItemProps = {
   product: Product
 }
 
 const ProductItem = ({product}: ProductItemProps) => {
+  const navigation = useNavigation()
+  const handlePress = () => {
+    navigation.navigate(SCREENS_ROUTES.DETAIL, {product})
+  }
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={handlePress}>
       <Image source={{uri: product.featuredImage.url}} style={styles.image} />
       <View style={styles.infoContainer}>
         <Text style={styles.title}>{product.title}</Text>
