@@ -10,6 +10,5 @@ export const getProducts = async (): Promise<Product[]> => {
   const response = await get<GetProductResponse>(path)
 
   const products = response.data.products.edges.map(edge => edge.node)
-  console.log({products})
   return products
 }
