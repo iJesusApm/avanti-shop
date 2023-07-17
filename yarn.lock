@@ -2276,6 +2276,14 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
+"@types/jest@^29.5.3":
+  version "29.5.3"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.5.3.tgz#7a35dc0044ffb8b56325c6802a4781a626b05777"
+  integrity sha512-1Nq7YrO/vJE/FYnqYyw0FS8LdrjExSgIiHyKg7xPpn+yi8Q4huZryKnkJatN1ZRH89Kw2v33/8ZMB7DuZeSLlA==
+  dependencies:
+    expect "^29.0.0"
+    pretty-format "^29.0.0"
+
 "@types/jsdom@^20.0.0":
   version "20.0.1"
   resolved "https://registry.yarnpkg.com/@types/jsdom/-/jsdom-20.0.1.tgz#07c14bc19bd2f918c1929541cdaacae894744808"
@@ -4254,7 +4262,7 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-expect@^29.6.1:
+expect@^29.0.0, expect@^29.6.1:
   version "29.6.1"
   resolved "https://registry.yarnpkg.com/expect/-/expect-29.6.1.tgz#64dd1c8f75e2c0b209418f2b8d36a07921adfdf1"
   integrity sha512-XEdDLonERCU1n9uR56/Stx9OqojaLAQtZf9PrCHH9Hl8YXiEIka3H4NXJ3NOIBmQJTg7+j7buh34PMHfJujc8g==
@@ -6018,7 +6026,7 @@ jest-worker@^29.6.1:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@^29.6.1:
+jest@^29.2.1:
   version "29.6.1"
   resolved "https://registry.yarnpkg.com/jest/-/jest-29.6.1.tgz#74be1cb719c3abe439f2d94aeb18e6540a5b02ad"
   integrity sha512-Nirw5B4nn69rVUZtemCQhwxOBhm0nsp3hmtF4rzCeWD7BkjAXRIji7xWQfnTNbz9g0aVsBX6aZK3n+23LM6uDw==
